@@ -17,5 +17,10 @@ namespace ASPCoreWebApplication.Controllers
         {
             return "from book cntrlr";
         }
+        public string GetBookByID(int id)
+        {
+            //return "book with id=" + id;
+            return $"book with id= {id}";
+        }
     }
 }
