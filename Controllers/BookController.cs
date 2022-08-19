@@ -12,7 +12,7 @@ namespace ASPCoreWebApplication.Controllers
         {
             return View();
         }
-        public string GetAllBooks()
+        public string GetAllBooksGIT()
         {
             return "from book cntrlr";
         }
