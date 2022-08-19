@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+		<!--<UseAppHost>False</UseAppHost>--> <!--use this to o/p dotnet as the process name, otherwise
+		it will be projectname itself here 'AspCoreWebapplication'-->
+	</PropertyGroup>
+
+</Project>
