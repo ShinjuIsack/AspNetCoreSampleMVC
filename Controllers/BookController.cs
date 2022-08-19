@@ -16,6 +16,10 @@ namespace ASPCoreWebApplication.Controllers
         {
             return "from book cntrlr";
         }
+        public string GetAllBooksLocal()
+        {
+            return "from book cntrlr";
+        }
         public string GetBooks()
         {
             return "from book cntrlr";
