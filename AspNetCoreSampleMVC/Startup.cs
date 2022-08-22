@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -34,12 +36,18 @@ namespace ASPCoreWebApplication
                 app.UseDeveloperExceptionPage();
             }
             //DefaultFilesOptions defFileOptions = new DefaultFilesOptions();
-            //defFileOptions.DefaultFileNames.Clear();
+            //defFileOptions.DefaultFileNames.Clear(); 
             //defFileOptions.DefaultFileNames.Add("Sample.html");
             //app.UseDefaultFiles(defFileOptions);
             //app.UseDefaultFiles();
             //app.UseStaticFiles();
             //app.UseFileServer();
+            app.UseStaticFiles();
+            StaticFileOptions staticFileOptions = new StaticFileOptions();
+            staticFileOptions.FileProvider = new PhysicalFileProvider(
+                Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles"));
+            staticFileOptions.RequestPath = "/MyStaticFiles";
+            app.UseStaticFiles(staticFileOptions);
 
             //1. Show Default.html while taking root of the project (http://localhost:4147/)
 
